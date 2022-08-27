@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+//colors
+$main-color: #dcdbe4;
+$background-color: #2b293e;
+$nav-text-color: #898994;
+
+//font
+$text-font: 'Silkscreen', cursive;
+
+.main {
+    width: 60%;
+    height: 80%;
+    max-height: 100vh;
+    margin: 1.75rem  auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header {
+    height: 20%;
+    margin: 20px;
+}
+
+.header .turn {
+    background-color: $background-color;
+    color: $main-color;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: $text-font;
+}
+
+.board {
+    margin: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cell {
+    width: 100%;
+    height: 6rem;
+    place-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cell .fa-solid {
+    font-size: 3rem;
+    font-weight: bold;
+    color: $main-color;
+}
+
+.score {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.score .score-card {
+    margin: 20px;
+    width: calc(100% / 3);
+    padding: 10px;
+    border-radius: 3px;
+    font-family: $text-font;
+}
+
+.score div.score-card:nth-child(2n+1) {    
+    background-color: $background-color;    
+    color: blanchedalmond;    
+}
+
+.score div.score-card:nth-child(2n) {    
+    background-color: blanchedalmond;
+    color: $background-color;
+}
+
+.overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    font-family: $text-font;
+    z-index: 2;
+}
+
+.overlay>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    color: $background-color;
+    font-size: 3rem;
+    background-color: $main-color;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+
+@import "../../node_modules/bulma/bulma.sass";
